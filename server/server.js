@@ -16,9 +16,10 @@ app.get('/', function (req, res) {
 
 app.use(require('./routes/usuario'));
 app.use(require('./routes/categoria'));
-   
+app.use(require('./routes/login'));
+
 mongoose.connect('mongodb://localhost:27017/cafeteria', {
-  useNewUrlParser: true,
+  useNewUrlParser: true, 
   useUnifiedTopology: true,
   useFindAndModify: false,
   useCreateIndex: true
