@@ -11,15 +11,16 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.get('/', function (req, res) {
-  res.send('<h1>Bienvenido a mi servidor REST localhost</h1>')
+  res.send('<h1>Bienvenido a mi servidor REST localhost de Starbucks</h1>')
 });
 
 app.use(require('./routes/usuario'));
 app.use(require('./routes/categoria'));
+app.use(require('./routes/productos'));  
 app.use(require('./routes/login'));
 
-mongoose.connect('mongodb://localhost:27017/cafeteria', {
-  useNewUrlParser: true, 
+mongoose.connect('mongodb+srv://admin:8a4a27961b@cluster0.2wpqr.mongodb.net/cafeteria', {
+  useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
   useCreateIndex: true

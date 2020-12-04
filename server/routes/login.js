@@ -13,7 +13,7 @@ app.post('/login', (req, res) =>{
                 ok: false,
                 msg: 'Ocurrio un error al momento del logueo',
                 err
-            });
+            }); 
         }
 
         if(!usrDB){

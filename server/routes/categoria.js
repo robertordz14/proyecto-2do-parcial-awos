@@ -89,6 +89,5 @@ app.put('/categoria/:id', function (req, res) {
          catDB
        });
       });
-     }); 
-
+     });  
 module.exports = app;

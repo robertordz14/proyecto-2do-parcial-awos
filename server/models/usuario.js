@@ -7,6 +7,10 @@ let usuarioSchema = new Schema({
         type: String,
         required: [true, 'El nombre es necesario']
     },
+    apellido: {
+        type: String,
+        required: [true, 'El apellido es necesario']
+    },
     email: {
     type: String,
     required: [true, 'El correo es necesario'],
@@ -15,14 +19,6 @@ let usuarioSchema = new Schema({
     password: {
         type: String,
         required: [true, 'La contraseña es necesario'],
-    },
-    img: {
-        type: String,
-        requiered: false
-    },
-    role: {
-        type: String,
-        default: 'USER_ROLE'
     },
     estado: {
         type: Boolean,
@@ -35,3 +31,8 @@ let usuarioSchema = new Schema({
 });
 
 module.exports = mongoose.model('Usuario', usuarioSchema);
+
+
+
+
+

@@ -9,7 +9,9 @@ let categoriaSchema = new Schema({
     },
     usuario: {
         type: Schema.Types.ObjectId,
-        ref: 'Usuario'
+        ref: 'Usuario',
+        required: [true, 'El usuario es obligatorio']
+
     }
 });
 

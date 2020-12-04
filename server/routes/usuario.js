@@ -33,7 +33,9 @@ const app = express();
     let usr = new Usuario({
       nombre: body.nombre, 
       email: body.email,
-      password: bcrypt.hashSync(body.password, 10)
+      password: bcrypt.hashSync(body.password, 10),
+      apellido: body.apellido
+
     });
 
     usr.save((err, usrDB) =>{
@@ -55,7 +57,7 @@ const app = express();
   
   app.put('/usuario/:id', function (req, res) {
    let id = req.params.id;
-   let body = _.pick(req.body, ['nombre', 'email']);
+   let body = _.pick(req.body, ['nombre', 'apellido', 'email']);
 
    Usuario.findByIdAndUpdate(id, body, {new: true, runValidators: true, context: 'query'}, 
    (err, usrDB) => {
