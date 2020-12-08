@@ -5,7 +5,7 @@ const Categoria = require('../models/categoria');
 
 app.get('/categoria', (req, res) => {
     let desde = req.query.desde || 0;
-    let hasta = req.query.hasta || 100; 
+    let hasta = req.query.hasta || 70; 
 
     Categoria.find({})
         .skip(Number(desde))

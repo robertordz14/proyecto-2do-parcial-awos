@@ -5,7 +5,7 @@ const app = express();
 
 app.get('/productos', function (req, res) {
     let desde = req.query.desde || 0;
-    let hasta = req.query.hasta || 100; 
+    let hasta = req.query.hasta || 70; 
     Productos.find({disponibilidad: true})
     .skip(Number(desde))
     .limit(Number(hasta))
