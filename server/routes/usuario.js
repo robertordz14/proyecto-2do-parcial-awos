@@ -6,7 +6,7 @@ const app = express();
   
   app.get('/usuario', function (req, res) {
     let desde = req.query.desde || 0;
-    let hasta = req.query.hasta || 5;
+    let hasta = req.query.hasta || 100;  
     Usuario.find({estado: true})
     .skip(Number(desde))
     .limit(Number(hasta))
